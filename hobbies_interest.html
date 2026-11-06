@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Hobbies & Interests</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Quicksand',sans-serif;
+    background:linear-gradient(135deg,#fff7fa,#fdeef4,#fffafc);
+    min-height:100vh;
+    padding:40px;
+}
+
+.card{
+    max-width:950px;
+    margin:auto;
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    border:2px solid #f0ccd7;
+    box-shadow:0 15px 35px rgba(220,175,190,.35);
+}
+
+.header{
+    background:linear-gradient(to right,#f9dce6,#fff2f6,#f9dce6);
+    text-align:center;
+    padding:35px;
+    border-bottom:2px dashed #ddb2bf;
+}
+
+.header h1{
+    font-family:'Cormorant Garamond',serif;
+    color:#8b5d6d;
+    font-size:48px;
+}
+
+.header p{
+    margin-top:10px;
+    color:#9b7180;
+    font-style:italic;
+}
+
+.paper{
+    padding:35px;
+    background:
+    repeating-linear-gradient(
+        white,
+        white 34px,
+        #f9dee6 35px
+    );
+}
+
+.section{
+    display:flex;
+    gap:25px;
+    align-items:center;
+    background:#fff8fa;
+    border-left:6px solid #efcad5;
+    border-radius:18px;
+    padding:20px;
+    margin-bottom:35px;
+    box-shadow:0 10px 20px rgba(220,180,190,.15);
+}
+
+.section img{
+    width:170px;
+    height:170px;
+    object-fit:cover;
+    border-radius:50%;
+    border:6px solid #f4d2db;
+    transition:.3s;
+}
+
+.section img:hover{
+    transform:scale(1.05);
+}
+
+.text{
+    flex:1;
+}
+
+.text h2{
+    color:#965f72;
+    font-family:'Cormorant Garamond',serif;
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.text p{
+    line-height:1.9;
+    color:#6f4e5d;
+    text-align:justify;
+}
+
+/* Envelope */
+
+.music-box{
+    text-align:center;
+    margin-top:20px;
+}
+
+.envelope{
+    font-size:65px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    transition:.3s;
+    animation:float 2.5s infinite ease-in-out;
+}
+
+.envelope:hover{
+    transform:scale(1.15) rotate(-8deg);
+}
+
+.music-box p{
+    margin-top:10px;
+    color:#a06a7b;
+    font-style:italic;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-8px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+.home{
+    text-align:center;
+    margin-top:40px;
+}
+
+.home a{
+
+    display:inline-block;
+    text-decoration:none;
+    padding:15px 38px;
+    color:#7b4d5f;
+    font-weight:bold;
+    background:linear-gradient(135deg,#fff8fb,#fde7ef,#fff8fb);
+    border:2px solid #efcad5;
+    border-radius:50px;
+    transition:.35s;
+    box-shadow:0 10px 20px rgba(220,170,185,.35);
+
+}
+
+.home a:hover{
+
+    transform:translateY(-5px);
+
+    background:#ffeef5;
+
+}
+
+footer{
+
+    text-align:center;
+
+    padding:18px;
+
+    background:#fff7fa;
+
+    color:#b17c8d;
+
+}
+
+
+/* Mobile Responsive Design */
+@media screen and (max-width:768px){
+body{padding:15px;}
+.card{width:100%;border-radius:18px;}
+.header{padding:25px 15px;}
+.header h1{font-size:32px;}
+.header p{font-size:15px;}
+.paper{padding:20px 15px;}
+.section,.website{flex-direction:column;text-align:center;gap:18px;}
+.section img,.website img{width:130px;height:130px;}
+.text h2,.website h2{font-size:26px;}
+.text p,.website p{text-align:left;font-size:15px;line-height:1.7;}
+.home a,.visit a{display:block;width:100%;text-align:center;padding:14px;}
+.envelope{font-size:50px;}
+footer{font-size:14px;padding:15px;}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="header">
+
+<h1>My Hobbies & Interests</h1>
+
+<p>"The activities that inspire and make me happy."</p>
+
+</div>
+
+<div class="paper">
+
+<!-- MUSIC -->
+
+<div class="section">
+
+<img src="music.jpg" alt="Music">
+
+<div class="text">
+
+<h2>🎵 Listening to Music</h2>
+
+<p>
+
+Listening to music is one of my favorite hobbies because it helps me relax and relieves my stress after a long day. It also motivates me while studying, coding, or doing daily tasks. Music inspires me and makes every moment more enjoyable.
+
+</p>
+
+<div class="music-box">
+
+<button class="envelope" onclick="playSong()">
+
+💌
+
+</button>
+
+<p>Click the envelope to play my favorite song!</p>
+
+<audio id="favSong">
+
+<source src="favorite_song.mp3" type="audio/mpeg">
+
+</audio>
+
+</div>
+
+</div>
+
+</div>
+<!-- PROGRAMMING -->
+
+<div class="section">
+
+    <img src="coding.jpg" alt="Programming">
+
+    <div class="text">
+
+        <h2>💻 Programming</h2>
+
+        <p>
+            Programming is one of my favorite hobbies because I enjoy solving problems
+            and creating different projects. Every program I make helps me improve my
+            logical thinking, creativity, and programming skills. It also prepares me
+            for my future career in Information Technology.
+        </p>
+
+    </div>
+
+</div>
+
+<!-- WATCHING MOVIES -->
+
+<div class="section">
+
+    <img src="movies.jpg" alt="Watching Movies">
+
+    <div class="text">
+
+        <h2>🎬 Watching Movies</h2>
+
+        <p>
+            Watching movies allows me to relax and enjoy different stories, cultures,
+            and life lessons. It is one of my favorite ways to spend my free time and
+            helps me appreciate creativity and imagination.
+        </p>
+
+    </div>
+
+</div>
+
+<!-- FAMILY -->
+
+<div class="section">
+
+    <img src="family.jpg" alt="Family">
+
+    <div class="text">
+
+        <h2>👨‍👩‍👧 Spending Time with Family</h2>
+
+        <p>
+            Spending time with my family is very important to me because they are my
+            greatest source of happiness, love, and support. Every moment we spend
+            together creates wonderful memories that I will always treasure.
+        </p>
+
+    </div>
+
+</div>
+
+<!-- BACK BUTTON -->
+
+<div class="home">
+
+    <a href="index.html">
+        🎀 ✧ Back to Home ✧ 🎀
+    </a>
+
+</div>
+
+</div>
+
+<footer>
+
+🌸 Thank you for visiting my Hobbies & Interests 🌸
+
+</footer>
+
+</div>
+
+<script>
+
+function playSong(){
+
+    var song = document.getElementById("favSong");
+
+    if(song.paused){
+
+        song.play();
+
+    }else{
+
+        song.pause();
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>

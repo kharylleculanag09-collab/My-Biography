@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Information</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:'Quicksand',sans-serif;
+            background:linear-gradient(135deg,#fff7fa,#fdeef4,#fffafc);
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:40px;
+        }
+
+        /* Decorative top and bottom */
+        body::before{
+            content:"♡ ✿ ୨୧ 🎀 ୨୧ ✿ ♡";
+            position:fixed;
+            top:15px;
+            left:50%;
+            transform:translateX(-50%);
+            color:#d8a3b5;
+            font-size:22px;
+            letter-spacing:10px;
+        }
+
+        body::after{
+            content:"♡ ✿ ୨୧ 🎀 ୨୧ ✿ ♡";
+            position:fixed;
+            bottom:15px;
+            left:50%;
+            transform:translateX(-50%);
+            color:#d8a3b5;
+            font-size:22px;
+            letter-spacing:10px;
+        }
+
+        /* Main Card */
+
+        .card{
+            width:900px;
+            background:white;
+            border:2px solid #f0ccd7;
+            border-radius:30px;
+            overflow:hidden;
+            box-shadow:0 20px 40px rgba(220,175,190,.35);
+        }
+
+        /* Header */
+
+        .header{
+            background:linear-gradient(to right,#f9dce6,#fff2f6,#f9dce6);
+            text-align:center;
+            padding:35px;
+            border-bottom:2px dashed #ddb2bf;
+        }
+
+        .header h1{
+            font-family:'Cormorant Garamond',serif;
+            font-size:48px;
+            color:#8a5b6b;
+        }
+
+        .header p{
+            margin-top:10px;
+            font-style:italic;
+            color:#9b7180;
+            font-size:18px;
+        }
+
+        /* Notebook Paper */
+
+        .paper{
+            padding:40px;
+            background:
+            repeating-linear-gradient(
+                white,
+                white 34px,
+                #f9dee6 35px
+            );
+        }
+
+        .flowers{
+            text-align:center;
+            color:#d6a4b3;
+            font-size:28px;
+            margin-bottom:25px;
+        }
+
+        /* Profile */
+
+        .profile{
+            text-align:center;
+            margin-bottom:35px;
+        }
+
+        .profile img{
+            width:190px;
+            height:190px;
+            border-radius:50%;
+            object-fit:cover;
+            border:6px solid #f4d2db;
+            box-shadow:0 12px 25px rgba(220,170,185,.35);
+            transition:.4s;
+        }
+
+        .profile img:hover{
+            transform:scale(1.05);
+        }
+
+        .profile h2{
+            margin-top:18px;
+            font-family:'Cormorant Garamond',serif;
+            color:#8b5d6d;
+            font-size:36px;
+        }
+
+        /* Personal Information */
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            margin:30px 0;
+        }
+
+        td{
+            padding:15px;
+            border-bottom:1px solid #efd5dd;
+            font-size:18px;
+        }
+
+        td:first-child{
+            width:180px;
+            font-weight:bold;
+            color:#8a5b6b;
+        }
+
+        /* Section Title */
+
+        .title{
+            text-align:center;
+            font-family:'Cormorant Garamond',serif;
+            font-size:38px;
+            color:#965f72;
+            margin:35px 0 25px;
+        }
+
+        /* Introduction Layout */
+
+        .intro-section{
+            display:flex;
+            gap:35px;
+            align-items:center;
+            flex-wrap:wrap;
+        }
+
+        .intro-text{
+            flex:2;
+            background:#fff7fa;
+            border-left:6px solid #efc8d3;
+            padding:25px;
+            border-radius:18px;
+            line-height:1.9;
+            color:#6f4e5d;
+            font-size:18px;
+            text-align:justify;
+            box-shadow:0 10px 20px rgba(220,180,190,.15);
+        }
+
+        .intro-photo{
+            flex:1;
+            text-align:center;
+        }
+
+        .intro-photo img{
+            width:250px;
+            height:320px;
+            object-fit:cover;
+            border-radius:20px;
+            border:6px solid #f4d2db;
+            box-shadow:0 15px 30px rgba(220,170,185,.35);
+            transition:.4s;
+        }
+
+        .intro-photo img:hover{
+            transform:scale(1.05);
+        }
+
+        /* Back Button */
+
+        .back{
+            text-align:center;
+            margin-top:40px;
+        }
+
+        .button{
+            display:inline-block;
+            text-decoration:none;
+            color:#7b4d5f;
+            font-weight:bold;
+            font-size:18px;
+
+            padding:16px 35px;
+
+            background:linear-gradient(135deg,#fff8fb,#fde9ef);
+
+            border:2px solid #efcad5;
+
+            border-radius:40px 15px 40px 15px;
+
+            box-shadow:
+            0 10px 20px rgba(220,175,190,.35),
+            inset 0 2px 2px white;
+
+            transition:.35s;
+        }
+
+        .button:hover{
+            background:#ffeef4;
+            transform:translateY(-5px);
+        }
+
+        footer{
+            background:#fff7fa;
+            text-align:center;
+            padding:20px;
+            border-top:2px dashed #e2bcc8;
+            color:#b17c8d;
+        }
+
+    
+        /* Enhanced midterm-project styling */
+        html { scroll-behavior: smooth; }
+
+        body {
+            background:
+                radial-gradient(circle at 8% 12%, rgba(255, 218, 232, .75), transparent 25%),
+                radial-gradient(circle at 92% 88%, rgba(248, 213, 226, .7), transparent 27%),
+                linear-gradient(135deg, #fff7fa, #fdeef4, #fffafc);
+        }
+
+        body::before, body::after {
+            z-index: 2;
+            pointer-events: none;
+            animation: decorationFloat 5s ease-in-out infinite;
+        }
+
+        .card {
+            width: min(100%, 1000px);
+            margin: 28px auto;
+            border-radius: 28px;
+            box-shadow: 0 24px 55px rgba(164, 100, 124, .20);
+            animation: cardEntrance .8s ease both;
+            transition: box-shadow .35s ease, transform .35s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 28px 65px rgba(164, 100, 124, .27);
+        }
+
+        .header {
+            position: relative;
+            padding: 42px 28px;
+            background: linear-gradient(120deg, #f7d9e4, #fff5f8 48%, #f5d6e2);
+        }
+
+        .header h1 {
+            font-size: clamp(2.2rem, 5vw, 3.3rem);
+            text-shadow: 2px 3px 0 rgba(255,255,255,.85), 0 5px 16px rgba(139,91,107,.16);
+            animation: titleReveal .8s ease both;
+        }
+
+        .header p {
+            line-height: 1.7;
+        }
+
+        .paper {
+            padding: clamp(22px, 5vw, 44px);
+        }
+
+        .profile {
+            padding: 12px 10px 22px;
+        }
+
+        .profile img {
+            max-width: 100%;
+            object-fit: cover;
+            opacity: .96;
+            box-shadow: 0 14px 30px rgba(164, 100, 124, .22);
+            transition: transform .35s ease, box-shadow .35s ease, opacity .35s ease;
+        }
+
+        .profile img:hover {
+            transform: scale(1.06) rotate(2deg);
+            opacity: 1;
+            box-shadow: 0 18px 36px rgba(164, 100, 124, .30);
+        }
+
+        .profile h2 {
+            text-shadow: 1px 2px 0 #fff0f5;
+            overflow-wrap: anywhere;
+        }
+
+        .title {
+            text-shadow: 1px 2px 0 rgba(255,255,255,.9);
+        }
+
+        table {
+            overflow: hidden;
+            border: 1px solid #f1d7e0;
+            border-radius: 16px;
+            box-shadow: 0 10px 24px rgba(220, 170, 185, .13);
+        }
+
+        tr {
+            transition: background-color .25s ease, transform .25s ease;
+        }
+
+        tr:nth-child(odd) {
+            background: rgba(255, 247, 250, .75);
+        }
+
+        tr:hover {
+            background: #ffedf3;
+        }
+
+        td {
+            line-height: 1.65;
+            overflow-wrap: anywhere;
+        }
+
+        td:first-child {
+            min-width: 130px;
+        }
+
+        .intro-text {
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .intro-text:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 28px rgba(220, 170, 185, .22);
+        }
+
+        .intro-photo img {
+            max-width: 100%;
+            opacity: .95;
+            transition: transform .35s ease, box-shadow .35s ease, opacity .35s ease;
+        }
+
+        .intro-photo img:hover {
+            transform: scale(1.04) rotate(-1.5deg);
+            opacity: 1;
+            box-shadow: 0 18px 36px rgba(164, 100, 124, .28);
+        }
+
+        .button {
+            cursor: pointer;
+            box-shadow: 0 10px 22px rgba(220,175,190,.28);
+        }
+
+        .button:hover {
+            background: linear-gradient(135deg, #ffeaf2, #f8d6e3);
+            box-shadow: 0 15px 28px rgba(190, 125, 149, .30);
+            transform: translateY(-5px) scale(1.03);
+        }
+
+        .button:focus-visible {
+            outline: 3px solid #9b5d76;
+            outline-offset: 5px;
+        }
+
+        footer {
+            line-height: 1.7;
+        }
+
+        @keyframes cardEntrance {
+            from { opacity: 0; transform: translateY(22px) scale(.985); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        @keyframes titleReveal {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes decorationFloat {
+            0%, 100% { translate: 0 0; }
+            50% { translate: 0 -5px; }
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 18px 12px;
+                align-items: flex-start;
+            }
+
+            .card {
+                margin: 28px auto;
+                border-radius: 22px;
+            }
+
+            .header {
+                padding: 30px 18px;
+            }
+
+            .paper {
+                padding: 22px 16px;
+            }
+
+            .intro-section {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 22px;
+            }
+
+            .intro-text {
+                font-size: 16px;
+                text-align: left;
+                padding: 20px;
+            }
+
+            .intro-photo img {
+                width: min(100%, 270px);
+                height: auto;
+                aspect-ratio: 5 / 6;
+            }
+
+            td {
+                padding: 12px 9px;
+                font-size: 15px;
+            }
+
+            td:first-child {
+                width: 35%;
+                min-width: 90px;
+            }
+
+            .title {
+                font-size: 32px;
+            }
+
+            body::before, body::after {
+                font-size: 16px;
+                letter-spacing: 4px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .profile img {
+                width: 155px;
+                height: 155px;
+            }
+
+            td {
+                font-size: 13px;
+                padding: 10px 7px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="header">
+
+        <h1>My Personal Information</h1>
+
+        <p>"A little introduction about myself."</p>
+
+    </div>
+
+    <div class="paper">
+
+        <div class="flowers">
+            ♡ ❀ ୨୧ 🎀 ୨୧ ❀ ♡
+        </div>
+
+        <!-- MAIN PROFILE PHOTO -->
+        <div class="profile">
+
+            <img src="myphoto.jpg" alt="Profile Picture">
+
+            <h2>Kharylle Braice P. Culanag</h2>
+
+        </div>
+
+        <!-- PERSONAL DETAILS -->
+
+        <div class="title">
+            Personal Details
+        </div>
+
+        <table>
+
+            <tr>
+                <td>Name</td>
+                <td>Kharylle Braice P. Culanag</td>
+            </tr>
+
+            <tr>
+                <td>Age</td>
+                <td>19 Years Old</td>
+            </tr>
+
+            <tr>
+                <td>Course</td>
+                <td>Bachelor of Science in Information Technology (BSIT)</td>
+            </tr>
+
+            <tr>
+                <td>Year Level</td>
+                <td>Second Year</td>
+            </tr>
+
+            <tr>
+                <td>School</td>
+                <td>Cebu Technological University – Argao Campus</td>
+            </tr>
+
+        </table>
+
+        <!-- INTRODUCTION -->
+
+        <div class="title">
+            Introduction
+        </div>
+
+        <div class="intro-section">
+
+            <div class="intro-text">
+
+                <p>
+                    Hello! My name is <strong>Kharylle Braice P. Culanag</strong>, and I am
+                    <strong>19 years old</strong>. I am currently a
+                    <strong>second-year Bachelor of Science in Information Technology (BSIT)</strong>
+                    student at <strong>Cebu Technological University – Argao Campus</strong>.
+                    I enjoy learning new technologies and improving my skills in
+                    programming and web development. I believe that every learning
+                    experience helps me become more knowledgeable and prepares me
+                    for a successful career in the IT industry.
+                </p>
+
+            </div>
+
+            <!-- SECOND PHOTO -->
+            <div class="intro-photo">
+
+                <img src="aboutme.png" alt="Second Picture">
+
+            </div>
+
+        </div>
+
+        <!-- BACK BUTTON -->
+
+        <div class="back">
+
+            <a href="index.html" class="button">
+                🏠 Back to Home
+            </a>
+
+        </div>
+
+        <div class="flowers" style="margin-top:35px;">
+            ♡ ❀ ୨୧ 🎀 ୨୧ ❀ ♡
+        </div>
+
+    </div>
+
+    <footer>
+        🌸 Thank you for visiting my personal biography 🌸
+    </footer>
+
+</div>
+
+</body>
+</html>

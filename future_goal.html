@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A scrapbook-style page about my future goals and dreams.">
+  <title>My Future Goals | A Dream in Bloom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rose: #bd5f88;
+      --deep-rose: #84435f;
+      --pink: #f7dce7;
+      --pale: #fff7fa;
+      --paper: #fffdfb;
+      --ink: #684b58;
+      --muted: #8c6b78;
+      --line: #edc5d5;
+      --shadow: 0 14px 32px rgba(132, 67, 95, .14);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      min-height: 100vh;
+      padding: 24px 16px 0;
+      font-family: 'Quicksand', sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 12%, rgba(255,255,255,.9) 0 3px, transparent 4px),
+        radial-gradient(circle at 90% 28%, rgba(255,255,255,.8) 0 4px, transparent 5px),
+        repeating-linear-gradient(to bottom, #fffafc 0, #fffafc 33px, #f7e0e9 34px, #fffafc 35px);
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--deep-rose); outline-offset: 4px; }
+
+    .page {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      overflow: hidden;
+      background: rgba(255,253,251,.96);
+      border: 1px solid var(--line);
+      border-radius: 28px 28px 0 0;
+      box-shadow: 0 22px 55px rgba(132,67,95,.15);
+      animation: pageEnter .7s ease-out both;
+    }
+
+    .topline {
+      padding: 11px 16px;
+      text-align: center;
+      color: var(--deep-rose);
+      background: #f4d5e2;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+    }
+
+    header {
+      position: relative;
+      isolation: isolate;
+      padding: clamp(36px, 7vw, 70px) 22px 48px;
+      text-align: center;
+      background: linear-gradient(135deg, #fff5f9, #f7d9e6 55%, #fff0f6);
+      border-bottom: 2px dotted #e6adc3;
+    }
+    header::before, header::after {
+      position: absolute;
+      z-index: -1;
+      color: #c56f94;
+      opacity: .24;
+      font-size: clamp(56px, 9vw, 105px);
+      line-height: 1;
+    }
+    header::before { content: "✿"; top: 18%; left: 6%; transform: rotate(-15deg); }
+    header::after { content: "❀"; right: 6%; bottom: 12%; transform: rotate(18deg); }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 7px 14px;
+      border: 1px solid #e8b4c8;
+      border-radius: 999px;
+      background: rgba(255,255,255,.65);
+      color: var(--deep-rose);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    h1 {
+      color: var(--deep-rose);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2.7rem, 7vw, 5rem);
+      line-height: 1;
+      text-shadow: 3px 4px 0 rgba(189,95,136,.2), 0 8px 18px rgba(132,67,95,.12);
+    }
+    header p {
+      max-width: 650px;
+      margin: 16px auto 0;
+      color: var(--muted);
+      font-size: clamp(.95rem, 2vw, 1.12rem);
+      line-height: 1.8;
+    }
+    .header-flourish { margin-top: 19px; color: var(--rose); letter-spacing: .45em; animation: float 3s ease-in-out infinite; }
+
+    .intro {
+      width: min(930px, calc(100% - 40px));
+      margin: 34px auto 0;
+      padding: 23px 26px;
+      text-align: center;
+      border: 1px dashed #dfadc0;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #fffafd, #fff0f5);
+      box-shadow: var(--shadow);
+    }
+    .intro h2 { color: var(--deep-rose); font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.7rem, 4vw, 2.3rem); }
+    .intro p { margin-top: 8px; color: var(--muted); line-height: 1.8; }
+
+    .goal-section { width: min(1050px, calc(100% - 40px)); margin: 0 auto; padding: 42px 0 20px; }
+    .section-heading { margin-bottom: 30px; text-align: center; }
+    .section-heading .kicker { color: var(--rose); font-size: .76rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+    .section-heading h2 { margin-top: 5px; color: var(--deep-rose); font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(2.2rem, 5vw, 3.3rem); text-shadow: 2px 3px 0 rgba(189,95,136,.14); }
+    .section-heading p { margin-top: 7px; color: var(--muted); line-height: 1.7; }
+
+    .gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 26px; }
+    .photo { min-width: 0; text-align: center; }
+    .scrap {
+      position: relative;
+      padding: 15px 15px 21px;
+      background: #fffdf9;
+      border: 1px solid #f2e6e9;
+      border-radius: 5px;
+      box-shadow: 0 12px 25px rgba(67,40,51,.15);
+      transition: transform .35s ease, box-shadow .35s ease;
+    }
+    .photo:nth-child(odd) .scrap { transform: rotate(-1.8deg); }
+    .photo:nth-child(even) .scrap { transform: rotate(1.8deg); }
+    .scrap:hover { z-index: 2; transform: translateY(-8px) rotate(0) scale(1.035); box-shadow: 0 22px 35px rgba(132,67,95,.23); }
+    .scrap::before {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      top: -9px;
+      left: 50%;
+      width: 84px;
+      height: 20px;
+      transform: translateX(-50%) rotate(-4deg);
+      background: repeating-linear-gradient(45deg, #ffd8e8 0 9px, #fff1f6 9px 18px);
+      opacity: .9;
+      box-shadow: 0 2px 3px rgba(132,67,95,.08);
+    }
+    .scrap::after { content: "♡"; position: absolute; top: 5px; right: 10px; color: #d38aa6; font-size: 24px; opacity: .8; }
+    .scrap img {
+      display: block;
+      width: 100%;
+      height: 225px;
+      object-fit: cover;
+      border: 5px solid white;
+      background: #f9e8ef;
+      opacity: .94;
+      transition: opacity .3s ease, filter .3s ease;
+    }
+    .scrap:hover img { opacity: 1; filter: saturate(1.08); }
+    .sticker { position: absolute; z-index: 3; bottom: 7px; right: 9px; font-size: 27px; filter: drop-shadow(0 2px 2px rgba(0,0,0,.08)); }
+    .photo h2 { margin-top: 20px; color: var(--rose); font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.45rem, 2.5vw, 1.8rem); line-height: 1.15; }
+    .photo p { margin: 9px auto 0; max-width: 330px; color: var(--muted); font-size: .94rem; line-height: 1.8; }
+
+    .dream-note {
+      width: min(850px, calc(100% - 40px));
+      margin: 28px auto 0;
+      padding: 28px 22px;
+      text-align: center;
+      color: var(--deep-rose);
+      background: linear-gradient(120deg, #f8dce7, #fff2f7);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .dream-note .quote-mark { font-family: Georgia, serif; font-size: 3rem; line-height: .7; opacity: .65; }
+    .dream-note p { margin-top: 8px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.4rem, 3vw, 2rem); font-style: italic; }
+    .dream-note small { display: block; margin-top: 10px; color: var(--muted); line-height: 1.6; }
+
+    .home { padding: 40px 16px 45px; text-align: center; }
+    .home a {
+      display: inline-block;
+      padding: 14px 30px;
+      border: 2px solid white;
+      border-radius: 999px;
+      color: white;
+      background: linear-gradient(45deg, #e89aba, #bd5f88);
+      box-shadow: 0 8px 18px rgba(132,67,95,.2), inset 0 0 0 1px #ffd8e8;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .3s ease, background .3s ease, box-shadow .3s ease;
+    }
+    .home a:hover { transform: translateY(-4px) scale(1.04); background: linear-gradient(45deg, #bd5f88, #87435d); box-shadow: 0 13px 25px rgba(132,67,95,.28); }
+
+    footer { padding: 30px 20px; text-align: center; background: #fff3f8; border-top: 2px dotted #e6adc3; }
+    footer h2 { color: var(--deep-rose); font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.5rem, 3vw, 2rem); }
+    footer p { margin-top: 10px; color: var(--muted); line-height: 1.8; }
+    .footer-flower { margin-top: 12px; color: var(--rose); letter-spacing: .3em; }
+
+    @keyframes pageEnter { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+
+    @media (max-width: 900px) {
+      .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 22px; }
+      .scrap img { height: 240px; }
+    }
+    @media (max-width: 580px) {
+      body { padding: 10px 8px 0; }
+      .page { border-radius: 20px 20px 0 0; }
+      .intro, .goal-section, .dream-note { width: calc(100% - 28px); }
+      .intro { padding: 20px 17px; }
+      .gallery { grid-template-columns: 1fr; gap: 32px; max-width: 390px; margin: 0 auto; }
+      .scrap img { height: 260px; }
+      header::before { left: 2%; }
+      header::after { right: 2%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+  <main class="page">
+    <div class="topline">♡ ✿ ୨୧ DREAMS IN BLOOM ୨୧ ✿ ♡</div>
+
+    <header>
+      <span class="eyebrow">A vision for my future</span>
+      <h1>My Future Goals ✨</h1>
+      <p>Dream big, work hard, stay humble. Every little step I take today brings me closer to the life I hope to build tomorrow.</p>
+      <div class="header-flourish" aria-hidden="true">♡ ✿ ── ❀ ── ✿ ♡</div>
+    </header>
+
+    <section class="intro" aria-labelledby="intro-title">
+      <h2 id="intro-title">A Future I'm Growing Toward 🌷</h2>
+      <p>My goals remind me why I keep learning and trying, even when the journey feels challenging. I know that patience, effort, and support from the people I love will help me move forward.</p>
+    </section>
+
+    <section class="goal-section" aria-labelledby="goals-title">
+      <div class="section-heading">
+        <span class="kicker">Little dreams, big meaning</span>
+        <h2 id="goals-title">My Dream Scrapbook</h2>
+        <p>Six goals that inspire me to keep growing, one step at a time.</p>
+      </div>
+
+      <div class="gallery">
+        <article class="photo">
+          <div class="scrap">
+            <img src="goal1.jpg" alt="Graduation as a symbol of completing my BSIT degree">
+            <span class="sticker" aria-hidden="true">🎀</span>
+          </div>
+          <h2>🎓 Graduate from BSIT</h2>
+          <p>My first goal is to finish my Bachelor of Science in Information Technology and graduate proudly with my family beside me.</p>
+        </article>
+
+        <article class="photo">
+          <div class="scrap">
+            <img src="goal2.jpg" alt="Computer and programming workspace representing a software development career">
+            <span class="sticker" aria-hidden="true">💖</span>
+          </div>
+          <h2>💻 Become a Software Developer</h2>
+          <p>I dream of becoming a skilled software developer and creating useful applications that can help people every day.</p>
+        </article>
+
+        <article class="photo">
+          <div class="scrap">
+            <img src="goal3.jpg" alt="Beautiful destination representing my dream of traveling around the world">
+            <span class="sticker" aria-hidden="true">🦋</span>
+          </div>
+          <h2>✈️ Travel Around the World</h2>
+          <p>I want to visit beautiful countries, experience different cultures, and make unforgettable memories.</p>
+        </article>
+
+        <article class="photo">
+          <div class="scrap">
+            <img src="goal4.jpg" alt="A welcoming house representing my dream home">
+            <span class="sticker" aria-hidden="true">🌼</span>
+          </div>
+          <h2>🏡 Own My Dream House</h2>
+          <p>One of my biggest dreams is to build a beautiful and peaceful home where my family can live comfortably and happily.</p>
+        </article>
+
+        <article class="photo">
+          <div class="scrap">
+            <img src="goal5.jpg" alt="Family together, representing my wish to give back to them">
+            <span class="sticker" aria-hidden="true">💌</span>
+          </div>
+          <h2>❤️ Give Back to My Family</h2>
+          <p>I want to thank my parents for their sacrifices by helping them live comfortably and making them proud of me.</p>
+        </article>
+
+        <article class="photo">
+          <div class="scrap">
+            <img src="goal6.jpg" alt="A small business workspace representing my future business dream">
+            <span class="sticker" aria-hidden="true">🌷</span>
+          </div>
+          <h2>🌸 Start My Own Business</h2>
+          <p>Someday, I hope to own a successful business that lets me help others while working toward financial stability.</p>
+        </article>
+      </div>
+    </section>
+
+    <aside class="dream-note">
+      <div class="quote-mark" aria-hidden="true">“</div>
+      <p>My roots know what my flowers endured.</p>
+      <small>I can be proud of how far I have come while still working toward everything I hope to become.</small>
+    </aside>
+
+    <div class="home">
+      <a href="index.html">🏠 Back to Home</a>
+    </div>
+
+    <footer>
+      <h2>🌸 Thank You for Visiting My Future Goals 🌸</h2>
+      <p>Every great achievement starts with a dream, grows through hard work, and becomes reality through perseverance.</p>
+      <p>✨ Believe in yourself · Stay positive · Keep chasing your dreams ✨</p>
+      <div class="footer-flower" aria-hidden="true">♡ ✿ ୨୧ ❀ ୨୧ ✿ ♡</div>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get to know Kharylle Braice P. Culanag, a BSIT student who enjoys technology, learning, and personal growth.">
+    <title>About Me | Kharylle's Personal Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --pink: #f3d0dc;
+            --deep-pink: #a45f78;
+            --text: #674958;
+            --soft-pink: #fff6f9;
+            --paper-line: #f8e2e9;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            padding: 76px 20px 45px;
+            font-family: 'Quicksand', sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at 10% 15%, rgba(255,255,255,.9) 0 3px, transparent 4px),
+                radial-gradient(circle at 90% 75%, rgba(255,255,255,.9) 0 4px, transparent 5px),
+                linear-gradient(135deg, #fff8fb, #fcecf2 48%, #fffafd);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        body::before,
+        body::after {
+            position: fixed;
+            left: 50%;
+            z-index: -1;
+            transform: translateX(-50%);
+            color: #c98fa4;
+            letter-spacing: 9px;
+            font-size: clamp(14px, 2vw, 22px);
+            white-space: nowrap;
+            opacity: .8;
+            pointer-events: none;
+        }
+
+        body::before {
+            content: "♡  ✿  ୨୧  🎀  ୨୧  ✿  ♡";
+            top: 18px;
+        }
+
+        body::after {
+            content: "♡  ✿  ୨୧  🎀  ୨୧  ✿  ♡";
+            bottom: 12px;
+        }
+
+        .card {
+            width: min(100%, 1000px);
+            overflow: hidden;
+            background: #fff;
+            border: 2px solid #f0cbd8;
+            border-radius: 30px;
+            box-shadow: 0 22px 55px rgba(167, 101, 125, .19);
+            animation: page-arrive .8s ease both;
+        }
+
+        .header {
+            position: relative;
+            padding: 38px 24px 32px;
+            text-align: center;
+            background: linear-gradient(120deg, #f7dce6, #fff5f8 50%, #f7dce6);
+            border-bottom: 2px dashed #ddb2c1;
+        }
+
+        .eyebrow {
+            margin-bottom: 8px;
+            color: #a96d82;
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .header h1 {
+            color: #89576a;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.7rem, 6vw, 4rem);
+            line-height: 1.05;
+            text-shadow: 2px 3px 0 rgba(255,255,255,.9), 0 5px 14px rgba(150, 86, 110, .15);
+        }
+
+        .header p {
+            max-width: 560px;
+            margin: 13px auto 0;
+            color: #946a7a;
+            font-size: .98rem;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .paper {
+            padding: clamp(22px, 5vw, 48px);
+            background: repeating-linear-gradient(
+                to bottom,
+                #fff 0,
+                #fff 35px,
+                var(--paper-line) 36px
+            );
+        }
+
+        .ornament {
+            margin: 0 auto 28px;
+            color: #c98fa4;
+            text-align: center;
+            font-size: 1.5rem;
+            letter-spacing: 7px;
+            opacity: .9;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: minmax(0, 1.5fr) minmax(220px, .85fr);
+            gap: clamp(25px, 5vw, 48px);
+            align-items: center;
+        }
+
+        .section-label {
+            display: inline-block;
+            margin-bottom: 10px;
+            padding: 6px 13px;
+            color: #965d73;
+            background: #fff0f5;
+            border: 1px solid #f1cfdb;
+            border-radius: 30px;
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .title {
+            margin-bottom: 18px;
+            color: #965f72;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.2rem, 4vw, 2.8rem);
+            text-shadow: 1px 2px 0 #fff;
+        }
+
+        .text {
+            padding: clamp(20px, 3vw, 28px);
+            background: rgba(255, 248, 250, .96);
+            border: 1px solid #f5dce4;
+            border-left: 6px solid #e9b8c9;
+            border-radius: 8px 20px 20px 8px;
+            box-shadow: 0 12px 25px rgba(190, 135, 155, .13);
+            font-size: 1rem;
+            line-height: 1.95;
+            text-align: left;
+        }
+
+        .text p + p {
+            margin-top: 18px;
+        }
+
+        .highlight {
+            color: #95536d;
+            font-weight: 700;
+        }
+
+        .right {
+            position: relative;
+            text-align: center;
+        }
+
+        .photo-frame {
+            position: relative;
+            display: inline-block;
+            width: min(100%, 290px);
+            padding: 11px;
+            background: #fff;
+            border: 2px solid #f0c8d6;
+            border-radius: 22px;
+            box-shadow: 0 16px 32px rgba(190, 125, 148, .24);
+            transform: rotate(2deg);
+            transition: transform .35s ease, box-shadow .35s ease;
+        }
+
+        .photo-frame:hover {
+            transform: rotate(0deg) scale(1.035);
+            box-shadow: 0 22px 40px rgba(190, 125, 148, .3);
+        }
+
+        .photo-frame img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 14px;
+            opacity: .96;
+            transition: opacity .3s ease;
+        }
+
+        .photo-frame:hover img {
+            opacity: 1;
+        }
+
+        .photo-caption {
+            margin-top: 14px;
+            color: #a36e81;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+        }
+
+        .illustration {
+            margin-top: 22px;
+            font-size: 2.5rem;
+            animation: gentle-float 3s ease-in-out infinite;
+        }
+
+        .quote {
+            margin-top: 30px;
+            padding: 18px 20px;
+            color: #89576a;
+            background: rgba(255, 240, 246, .85);
+            border: 1px dashed #e0aebe;
+            border-radius: 16px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .back {
+            margin-top: 34px;
+            text-align: center;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            min-height: 50px;
+            padding: 14px 28px;
+            color: #7b4d5f;
+            background: linear-gradient(135deg, #fff9fb, #fbe5ed);
+            border: 2px solid #eac1cf;
+            border-radius: 30px 14px 30px 14px;
+            box-shadow: 0 8px 18px rgba(190, 125, 148, .2);
+            font: inherit;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
+        }
+
+        .button:hover {
+            background: #f8dce7;
+            box-shadow: 0 13px 24px rgba(190, 125, 148, .28);
+            transform: translateY(-4px) scale(1.02);
+        }
+
+        .button:focus-visible {
+            outline: 3px solid #a45f78;
+            outline-offset: 4px;
+        }
+
+        footer {
+            padding: 20px 16px;
+            color: #a36e81;
+            background: #fff7fa;
+            border-top: 2px dashed #e3bcc8;
+            font-size: .9rem;
+            text-align: center;
+        }
+
+        @keyframes page-arrive {
+            from { opacity: 0; transform: translateY(18px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes gentle-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-7px); }
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 62px 13px 42px;
+            }
+
+            .card {
+                border-radius: 22px;
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .right {
+                grid-row: 1;
+            }
+
+            .photo-frame {
+                width: min(75%, 260px);
+            }
+
+            .text {
+                line-height: 1.8;
+            }
+
+            .ornament {
+                letter-spacing: 3px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="card">
+        <header class="header">
+            <div class="eyebrow">A little piece of my story</div>
+            <h1>About Me</h1>
+            <p>“A glimpse of who I am beyond my achievements.”</p>
+        </header>
+
+        <section class="paper">
+            <div class="ornament" aria-hidden="true">♡ ❀ ୨୧ 🎀 ୨୧ ❀ ♡</div>
+
+            <div class="content">
+                <div class="left">
+                    <span class="section-label">Nice to meet you!</span>
+                    <h2 class="title">Who Am I?</h2>
+
+                    <div class="text">
+                        <p>
+                            Hello! I am <span class="highlight">Kharylle Braice P. Culanag</span>,
+                            a 19-year-old second-year Bachelor of Science in Information Technology
+                            (BSIT) student at <span class="highlight">Cebu Technological University – Argao Campus</span>.
+                            I am a curious and hardworking individual who enjoys learning new things,
+                            especially in the field of technology. I like exploring programming,
+                            web development, and other IT-related skills that help me grow both
+                            academically and personally.
+                        </p>
+                        <p>
+                            In my free time, I enjoy spending time with my family and friends,
+                            listening to music, and discovering new interests. My goal is to
+                            continuously improve myself, gain valuable knowledge and experience,
+                            and become a skilled IT professional who can make a positive impact
+                            in the future.
+                        </p>
+                    </div>
+                </div>
+
+                <aside class="right">
+                    <div class="photo-frame">
+                        <img src="picture.jpg" alt="Portrait of Kharylle">
+                    </div>
+                    <p class="photo-caption">A little about me ♡</p>
+                    <div class="illustration" aria-hidden="true">🌸 🎀 🦋</div>
+                </aside>
+            </div>
+
+            <blockquote class="quote">
+                “Growing, learning, and blooming into the person I hope to become.”
+            </blockquote>
+
+            <div class="back">
+                <a href="index.html" class="button">🏠 <span>Back to Home</span></a>
+            </div>
+
+            <div class="ornament" style="margin-top: 34px; margin-bottom: 0;" aria-hidden="true">♡ ❀ ୨୧ 🎀 ୨୧ ❀ ♡</div>
+        </section>
+
+        <footer>🌸 Thank you for taking a little time to read my story 🌸</footer>
+    </main>
+</body>
+</html>

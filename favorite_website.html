@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Favorite Website</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Quicksand',sans-serif;
+background:linear-gradient(135deg,#fff7fa,#fdeef4,#fffafc);
+padding:40px;
+}
+
+.card{
+max-width:900px;
+margin:auto;
+background:white;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 15px 35px rgba(220,170,185,.35);
+border:2px solid #f0ccd7;
+}
+
+.header{
+background:linear-gradient(to right,#f9dce6,#fff2f6,#f9dce6);
+padding:35px;
+text-align:center;
+border-bottom:2px dashed #ddb2bf;
+}
+
+.header h1{
+font-family:'Cormorant Garamond',serif;
+font-size:48px;
+color:#8a5b6b;
+}
+
+.header p{
+margin-top:10px;
+color:#9b7180;
+font-style:italic;
+}
+
+.paper{
+
+padding:35px;
+
+background:
+repeating-linear-gradient(
+white,
+white 34px,
+#f9dee6 35px);
+
+}
+
+.website{
+
+display:flex;
+
+align-items:center;
+
+gap:30px;
+
+background:#fff8fa;
+
+padding:25px;
+
+border-left:6px solid #efcad5;
+
+border-radius:18px;
+
+margin-bottom:30px;
+
+box-shadow:0 10px 20px rgba(220,180,190,.15);
+
+}
+
+.website img{
+
+width:170px;
+
+height:170px;
+
+object-fit:cover;
+
+border-radius:50%;
+
+border:6px solid #f4d2db;
+
+}
+
+.website h2{
+
+font-family:'Cormorant Garamond',serif;
+
+color:#965f72;
+
+font-size:35px;
+
+margin-bottom:10px;
+
+}
+
+.website p{
+
+line-height:1.9;
+
+text-align:justify;
+
+color:#6f4e5d;
+
+}
+
+.visit{
+
+margin-top:20px;
+
+}
+
+.visit a{
+
+text-decoration:none;
+
+background:#f8dce6;
+
+padding:12px 30px;
+
+border-radius:30px;
+
+color:#7b4d5f;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+.visit a:hover{
+
+background:#ffeef5;
+
+}
+
+.home{
+
+text-align:center;
+
+margin-top:40px;
+
+}
+
+.home a{
+
+display:inline-block;
+
+text-decoration:none;
+
+padding:15px 40px;
+
+border-radius:50px;
+
+background:linear-gradient(135deg,#fff8fb,#fde7ef);
+
+border:2px solid #efcad5;
+
+font-weight:bold;
+
+color:#7b4d5f;
+
+transition:.35s;
+
+}
+
+.home a:hover{
+
+transform:translateY(-5px);
+
+background:#ffeef5;
+
+}
+
+footer{
+
+background:#fff7fa;
+
+padding:18px;
+
+text-align:center;
+
+color:#b17c8d;
+
+}
+
+
+/* Mobile Responsive Design */
+@media screen and (max-width:768px){
+body{padding:15px;}
+.card{width:100%;border-radius:18px;}
+.header{padding:25px 15px;}
+.header h1{font-size:32px;}
+.header p{font-size:15px;}
+.paper{padding:20px 15px;}
+.section,.website{flex-direction:column;text-align:center;gap:18px;}
+.section img,.website img{width:130px;height:130px;}
+.text h2,.website h2{font-size:26px;}
+.text p,.website p{text-align:left;font-size:15px;line-height:1.7;}
+.home a,.visit a{display:block;width:100%;text-align:center;padding:14px;}
+.envelope{font-size:50px;}
+footer{font-size:14px;padding:15px;}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="header">
+
+<h1>My Favorite Website</h1>
+
+<p>"A website that I frequently use and enjoy."</p>
+
+</div>
+
+<div class="paper">
+
+<div class="website">
+
+<img src="youtube_logo.jpg" alt="YouTube Logo">
+
+<div>
+
+<h2>YouTube</h2>
+
+<p>
+
+One of my favorite websites is <strong>YouTube</strong> because it provides educational videos, tutorials, music, entertainment, and inspiring content. As a BSIT student, I often watch programming tutorials and web development lessons to improve my skills. I also enjoy listening to music and watching videos during my free time, making YouTube both educational and entertaining.
+
+</p>
+
+<div class="visit">
+
+<a href="https://www.youtube.com" target="_blank">
+
+🌐 Visit YouTube
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="home">
+
+<a href="index.html">
+
+🎀 ✧ Back to Home ✧ 🎀
+
+</a>
+
+</div>
+
+</div>
+
+<footer>
+
+🌸 Thank you for visiting my favorite website page 🌸
+
+</footer>
+
+</div>
+
+</body>
+
+</html>
